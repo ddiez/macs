@@ -19,7 +19,7 @@ RUN apt-get clean
 RUN rm -rf /tmp/MACS
 
 # Set user.
-RUN useradd -ms /bin/bash macsuser
-RUN echo 'macsuser:macsuser' | chpasswd
-USER macsuser
-WORKDIR /home/macsuser
+RUN useradd -ms /bin/bash biodev
+RUN echo 'biodev:biodev' | chpasswd
+USER biodev
+WORKDIR /home/biodev
