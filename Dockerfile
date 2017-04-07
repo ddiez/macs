@@ -14,6 +14,10 @@ RUN apt-get update && \
     apt-get autoremove -y
 
 
+## Set up environment.
+# Variables.
+ENV PATH /opt/bin:$PATH
+ENV PYTHONPATH /opt/lib/python2.7/site-packages:$PYTHONPATH
 
 # User.
 RUN useradd -ms /bin/bash biodev
