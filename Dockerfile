@@ -1,12 +1,14 @@
 FROM debian:testing
 MAINTAINER Diego Diez <diego10ruiz@gmail.com>
 
+ENV VERSION=v2.0.9
+
 ## Install MACS.
 RUN apt-get update && \
     apt-get install -y git && \
     apt-get install -y python2.7 python-numpy cython && \
     cd /tmp && git clone https://github.com/taoliu/MACS.git && \
-    cd MACS && git checkout v2.0.9 && \
+    cd MACS && git checkout $VERSION && \
     python setup.py install --prefix /opt && \
     cd /tmp && rm -rf MACS && \
     apt-get clean -y && \
